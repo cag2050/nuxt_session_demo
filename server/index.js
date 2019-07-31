@@ -43,6 +43,7 @@ async function start() {
     // ctx.respond = false // Bypass Koa's built-in response handling
     // ctx.req.ctx = ctx // This might be useful later on, e.g. in nuxtServerInit or with nuxt-stash
     // // 设置session，自己添加；之后可以在 req 上拿到 session
+    // https://www.jianshu.com/p/1f8137a8e7b1
     // ctx.req.session = ctx.session
     // // 用 Nuxt.js 渲染每个路由
     // // 建议把 nuxt.render 放到中间件列表的最后面，因为它不会再调用 next() 方法，而是直接处理你 web 应用的页面渲染。
@@ -59,7 +60,8 @@ async function start() {
       name: 'jeff',
       age: 30
     }
-    // ctx.req.session = ctx.session
+    // https://www.jianshu.com/p/1f8137a8e7b1
+    ctx.req.session = ctx.session
     ctx.body = ctx
     console.log(ctx.session)
   })
